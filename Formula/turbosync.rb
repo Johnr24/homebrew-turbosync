@@ -1,17 +1,21 @@
 # Formula: turbosync.rb
 class Turbosync < Formula
-  desc "A macOS utility for synchronizing directories using rsync."
+  desc "macOS utility for synchronizing directories using rsync"
   homepage "https://github.com/johnr24/turbosync"
   url "https://github.com/Johnr24/TurboSync/releases/download/v1.4.5/TurboSync-v1.4.5.dmg"
-  sha256 "ff5e545f5c0bc9697d8d5a3a5cbadeca25a5e5a5a47f91b9145dc0f49d7fae0a"
   version "1.4.5"
+  sha256 "ff5e545f5c0bc9697d8d5a3a5cbadeca25a5e5a5a47f91b9145dc0f49d7fae0a"
 
   depends_on :macos
 
   def install
-    # The zip file should contain TurboSync.app at the root.
-    # Homebrew automatically extracts the zip into the current working directory.
-    prefix.install "TurboSync.app"
+    # Mount the DMG, copy the app, and unmount
+    dmg_path = staged_path/"TurboSync-v#{version}.dmg"
+    mount_point = "/Volumes/TurboSync v#{version}" # Assuming volume name pattern
+
+    system "hdiutil", "attach", "-nobrowse", dmg_path
+    prefix.install Dir["#{mount_point}/TurboSync.app"].first
+    system "hdiutil", "detach", mount_point
   end
 
   def caveats
@@ -29,6 +33,6 @@ class Turbosync < Formula
 
   test do
     # Check if the .app bundle exists in the installation directory
-    assert_predicate opt_prefix/"TurboSync.app", :exist?
+    assert_path_exists opt_prefix/"TurboSync.app"
   end
 end
