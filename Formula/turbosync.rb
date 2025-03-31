@@ -13,6 +13,9 @@ class Turbosync < Formula
     dmg_path = "TurboSync-v#{version}.dmg" # Match the actual filename from the URL
     mount_point = "/Volumes/TurboSync v#{version}" # Assuming volume name pattern
 
+    # Debug: List files in the current directory
+    system "ls", "-la"
+
     system "hdiutil", "attach", "-nobrowse", dmg_path
     prefix.install Dir["#{mount_point}/TurboSync.app"].first
     system "hdiutil", "detach", mount_point
