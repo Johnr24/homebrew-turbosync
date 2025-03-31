@@ -2,9 +2,9 @@
 class Turbosync < Formula
   desc "macOS utility for synchronizing directories using rsync"
   homepage "https://github.com/johnr24/turbosync"
-  url "https://github.com/Johnr24/TurboSync/releases/download/v1.4.5/TurboSync-v1.4.5.dmg"
-  version "1.4.5"
-  sha256 "ff5e545f5c0bc9697d8d5a3a5cbadeca25a5e5a5a47f91b9145dc0f49d7fae0a"
+  url "https://github.com/Johnr24/TurboSync/releases/download/v1.4.6/TurboSync-v1.4.6.dmg"
+  version "1.4.6"
+  sha256 "cfdda0c78487151c87deda98e84d63b2df5920a1b1788cf21f517108a1a56eb0"
 
   depends_on :macos
 
