@@ -10,7 +10,7 @@ class Turbosync < Formula
 
   def install
     # Mount the DMG, copy the app, and unmount
-    dmg_path = "#{name}-v#{version}.dmg" # Use the downloaded DMG filename directly
+    dmg_path = "TurboSync-v#{version}.dmg" # Match the actual filename from the URL
     mount_point = "/Volumes/TurboSync v#{version}" # Assuming volume name pattern
 
     system "hdiutil", "attach", "-nobrowse", dmg_path
