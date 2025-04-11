@@ -1,8 +1,8 @@
 cask "turbosync" do
-  version "1.5.1"
-  sha256 "a6e7ae6cf93863dcc1bc6497e40d482cfd80885c3f156741b3729f8c80f567c2"
+  version "1.6.2"
+  sha256 "863b273550e3dd5e2f65b5a55ff1ae477efe247aedb4d08f0df40dfc12cb2392"
 
-  url "https://github.com/Johnr24/TurboSync/releases/download/v1.5.1/TurboSync-v1.5.1.dmg",
+  url "https://github.com/Johnr24/TurboSync/releases/download/v1.6.2/TurboSync-v1.6.2.dmg",
       verified: "github.com/Johnr24/TurboSync/"
   name "TurboSync"
   desc "macOS utility for synchronizing directories using rsync"
